@@ -4,6 +4,7 @@
 
 `obsidian.vim` facilitates writing Obsidian notes in Vim.
 
-## Acknowledgement
+## Heavily based on
 
 - [tpope/vim-markdown](https://github.com/tpope/vim-markdown)
+- [preservim/vim-markdown](https://github.com/preservim/vim-markdown)
