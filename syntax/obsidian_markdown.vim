@@ -74,7 +74,8 @@ syn region obmarkdownLinkDef matchgroup=obmarkdownDelimiter   start="^ \{,3}\zs\
 syn region obmarkdownLinkDefTarget start="<\?\zs\S" excludenl end="\ze[>[:space:]\n]"   contained nextgroup=obmarkdownLinkDef skipwhite skipnl oneline
 
 " wikilink
-syn region obmarkdownWikiLink matchgroup=obmarkdownDelimiter start="\\\@<!!\?\[\[\ze\(\([^]\n]\+\)\)" end="\]\]" oneline
+syn region obmarkdownWikiLink matchgroup=obmarkdownDelimiter start="\\\@<!!\?\[\[\ze\(\([^]\n]\+\)\)" end="\]\]" contains=obmarkdownWikiAltName oneline
+syn region obmarkdownWikiAltName matchgroup=obmarkdownDelimiter start="|" end="\ze\]\]" contained
 
 " YAML frontmatter
 syn include @yamlTop syntax/yaml.vim
