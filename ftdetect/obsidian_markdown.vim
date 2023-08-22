@@ -1,13 +1,10 @@
 if !has('python3')
-    echomsg "python3 is required"
+    echoerr "python3 is required"
     finish
 endif
 
 function! s:FtDetect()
-    py3 << EOF
-import ftdetect
-ftdetect.ftdetect()
-EOF
+    py3 obsidian.ftdetect()
 endfunction
 
 autocmd BufRead,BufNewFile *.md call s:FtDetect()
