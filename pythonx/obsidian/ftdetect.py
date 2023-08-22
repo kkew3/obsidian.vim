@@ -4,7 +4,7 @@ import os
 import vim
 
 
-def ftdetect():
+def reload_syntax_if_under_obsidian_vault():
     path = vim.current.buffer.name
     while path != os.path.dirname(path):
         path = os.path.dirname(path)
