@@ -10,5 +10,6 @@ def ftdetect():
         path = os.path.dirname(path)
         if ('.obsidian' in os.listdir(path)
                 and os.path.isdir(os.path.join(path, '.obsidian'))):
-            vim.command('setlocal filetype=obsidian_markdown')
+            vim.command('let b:under_obsidian_vault = 1')
+            vim.command('syntax on')
             break
