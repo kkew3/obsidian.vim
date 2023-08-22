@@ -11,7 +11,7 @@ if get(b:, "under_obsidian_vault", 0)
     syn region htmlH6 matchgroup=mkdHeadingDelimiter start="\v^###### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
 
     " bookmark hash
-    syn match mkdBookmarkHash "\v(^|\s+)\^[0-9a-zA-Z]+(\n{2,}|%$)"
+    syn match mkdBookmarkHash "\v(^|\s+)\^[0-9a-zA-Z]+(\n{1,}|%$)"
 
     " wikilink
     syn region mkdWikiLink matchgroup=mkdDelimiter start="\\\@<!!\?\[\[\ze\(\([^]\n]\+\)\)" end="\]\]" contains=mkdWikiAltName oneline
