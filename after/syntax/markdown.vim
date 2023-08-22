@@ -25,7 +25,7 @@ function! s:PatchObsidianSyntax()
     syn match mkdBookmarkHash "\v(^|\s+)\^[0-9a-zA-Z]+(\n{1,}|%$)"
 
     " wikilink
-    syn region mkdWikiLink matchgroup=mkdDelimiter start="\\\@<!!\?\[\[\ze\(\([^]\n]\+\)\)" end="\]\]" contains=mkdWikiAltName oneline
+    syn region mkdWikiLink matchgroup=mkdDelimiter start="\\\@<!!\?\[\[\ze[^]\n]\+" end="\]\]" contains=mkdWikiAltName oneline
     syn region mkdWikiAltName matchgroup=mkdDelimiter start="|" end="\ze\]\]" contained
 
     " blockquote
