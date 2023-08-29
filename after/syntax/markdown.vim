@@ -21,6 +21,9 @@ function! s:PatchObsidianSyntax()
     syn region htmlH5 matchgroup=mkdHeadingDelimiter start="\v^##### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
     syn region htmlH6 matchgroup=mkdHeadingDelimiter start="\v^###### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
 
+    " hash tag
+    syn match mkdTag "\v#[/a-zA-Z0-9_-]+"
+
     " bookmark hash
     syn match mkdBookmarkHash "\v(^|\s+)\^[0-9a-zA-Z]+(\n{1,}|%$)"
 
@@ -47,7 +50,7 @@ function! s:PatchObsidianSyntax()
     endif
 
 
-    syn cluster mkdNonListItem contains=@htmlTop,htmlItalic,htmlBold,htmlBoldItalic,mkdBookmarkHash,mkdLink,mkdLinkDef,mkdBlockquote,mkdCode,mkdRule,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,mkdMath,mkdStrike,mkdMark,mkdWikiLink
+    syn cluster mkdNonListItem contains=@htmlTop,htmlItalic,htmlBold,htmlBoldItalic,mkdBookmarkHash,mkdLink,mkdLinkDef,mkdBlockquote,mkdCode,mkdRule,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,mkdMath,mkdStrike,mkdMark,mkdWikiLink,mkdTag
 
 
 
@@ -55,6 +58,7 @@ function! s:PatchObsidianSyntax()
     hi def link mkdHeadingDelimiter Delimiter
     hi def link mkdBookmarkHash Comment
     hi def link mkdDelimiter Comment
+    hi def link mkdTag htmlTag
     hi def link mkdWikiLink htmlLink
 
     let b:current_syntax = 'mkd'
