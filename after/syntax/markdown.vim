@@ -14,12 +14,12 @@ function! s:PatchObsidianSyntax()
     endif
 
     " headings
-    syn region htmlH1 matchgroup=mkdHeadingDelimiter start="\v^# " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
-    syn region htmlH2 matchgroup=mkdHeadingDelimiter start="\v^## " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
-    syn region htmlH3 matchgroup=mkdHeadingDelimiter start="\v^### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
-    syn region htmlH4 matchgroup=mkdHeadingDelimiter start="\v^#### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
-    syn region htmlH5 matchgroup=mkdHeadingDelimiter start="\v^##### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
-    syn region htmlH6 matchgroup=mkdHeadingDelimiter start="\v^###### " end="\v$" contains=mkdLink,mkdWikiLink,mkdBookmarkHash,@Spell
+    syn region htmlH1 matchgroup=mkdHeadingDelimiter start="\v^# " end="\v$" contains=mkdLink,mkdCode,mkdWikiLink,mkdBookmarkHash,@Spell
+    syn region htmlH2 matchgroup=mkdHeadingDelimiter start="\v^## " end="\v$" contains=mkdLink,mkdCode,mkdWikiLink,mkdBookmarkHash,@Spell
+    syn region htmlH3 matchgroup=mkdHeadingDelimiter start="\v^### " end="\v$" contains=mkdLink,mkdCode,mkdWikiLink,mkdBookmarkHash,@Spell
+    syn region htmlH4 matchgroup=mkdHeadingDelimiter start="\v^#### " end="\v$" contains=mkdLink,mkdCode,mkdWikiLink,mkdBookmarkHash,@Spell
+    syn region htmlH5 matchgroup=mkdHeadingDelimiter start="\v^##### " end="\v$" contains=mkdLink,mkdCode,mkdWikiLink,mkdBookmarkHash,@Spell
+    syn region htmlH6 matchgroup=mkdHeadingDelimiter start="\v^###### " end="\v$" contains=mkdLink,mkdCode,mkdWikiLink,mkdBookmarkHash,@Spell
 
     " hash tag
     syn match mkdTag "\v#[/a-zA-Z0-9_-]+"
